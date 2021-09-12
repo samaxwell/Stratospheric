@@ -1,0 +1,936 @@
+{
+  "version": "12.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "SpringBootApplication": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://725314003972/us-east-2",
+      "properties": {
+        "templateFile": "SpringBootApplication.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/SpringBootApplication/network/vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcFB59E56F",
+            "trace": [
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:355:25)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PublicSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet1RouteTableCF3181EC",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PublicSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet1RouteTableAssociation5DA8D171",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PublicSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet1DefaultRoute5110BBFF",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:735:23)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:388:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:387:32)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet2SubnetAC520044",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PublicSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet2RouteTableFD010EAA",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PublicSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet2RouteTableAssociation2953F5F9",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PublicSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodpublicSubnetSubnet2DefaultRouteA27E1742",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:735:23)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:388:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:387:32)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodisolatedSubnetSubnet1Subnet42478409",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PrivateSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodisolatedSubnetSubnet1RouteTable4688031D",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PrivateSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodisolatedSubnetSubnet1RouteTableAssociationFA0F6C82",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PrivateSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodisolatedSubnetSubnet2SubnetABE7751B",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PrivateSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodisolatedSubnetSubnet2RouteTable744C94FE",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PrivateSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcprodisolatedSubnetSubnet2RouteTableAssociationE65126DE",
+            "trace": [
+              "new Subnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PrivateSubnet (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:557:18)",
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcIGWA706E8BE",
+            "trace": [
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:380:25)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcVPCGWFC117BC5",
+            "trace": [
+              "new Vpc (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:383:25)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/cluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkcluster9BBEF63B",
+            "trace": [
+              "new Cluster (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ecs\\lib\\cluster.js:79:25)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/loadbalancerSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkloadbalancerSecurityGroup6229255D",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:213:30)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/ingressToLoadbalancer": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkingressToLoadbalancerEB1B6CE2",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/loadbalancer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkloadbalancerB8F249E9",
+            "trace": [
+              "new BaseLoadBalancer (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-load-balancer.js:35:26)",
+              "new ApplicationLoadBalancer (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:28:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/loadbalancer/httpListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkloadbalancerhttpListener2710DF25",
+            "trace": [
+              "new BaseListener (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-listener.js:21:26)",
+              "new ApplicationListener (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:32:9)",
+              "ApplicationLoadBalancer.addListener (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:74:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8183:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8183:107",
+              "Kernel._ensureSync (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8776:28)",
+              "Kernel.invoke (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8183:34)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/dummyTargetGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkdummyTargetGroupC0022A32",
+            "trace": [
+              "new TargetGroupBase (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-target-group.js:44:25)",
+              "new ApplicationTargetGroup (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:26:9)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/vpcId/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkvpcId0F779775",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/httpListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkhttpListenerC3DF163D",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/httpsListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkhttpsListenerDDBE55BA",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/loadBalancerSecurityGroupId/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkloadBalancerSecurityGroupId680E5042",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/ecsClusterName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkecsClusterName5B27EF69",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/availabilityZoneOne/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkavailabilityZoneOneDCF9B1FA",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/availabilityZoneTwo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkavailabilityZoneTwo90769EFE",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/isolatedSubnetOne/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkisolatedSubnetOne71EAA7DC",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/isolatedSubnetTwo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkisolatedSubnetTwo0385329F",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/publicSubnetOne/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkpublicSubnetOne3CB3BA5F",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/publicSubnetTwo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkpublicSubnetTwoFEC29B5A",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/loadBalancerArn/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkloadBalancerArnD0A6B0BC",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/loadBalancerDnsName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkloadBalancerDnsName5BFC3B60",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/network/loadBalancerCanonicalHostedZoneId/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "networkloadBalancerCanonicalHostedZoneId880D0C9C",
+            "trace": [
+              "new StringParameter (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:98:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/targetGroup": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServicetargetGroupA8A17F03",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/httpListenerRule": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServicehttpListenerRule46A86AF4",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/ecsLogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceecsLogGroup1EA96AB9",
+            "trace": [
+              "new LogGroup (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-logs\\lib\\log-group.js:165:26)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/ecsTaskExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceecsTaskExecutionRole0EBE7C5D",
+            "trace": [
+              "new Role (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/ecsTaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceecsTaskRole4E8999D2",
+            "trace": [
+              "new Role (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/taskDefinition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServicetaskDefinitionC6531610",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/ecsSecurityGroup": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceecsSecurityGroup6D8FF04D",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/ecsIngressFromSelf": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceecsIngressFromSelf8949B55F",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/ecsIngressFromLoadbalancer": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceecsIngressFromLoadbalancer62209FDD",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/Service/ecsService": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceecsService30915DD1",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/loadbalancerDnsName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "loadbalancerDnsName",
+            "trace": [
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "Kernel._create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8367:34)",
+              "Kernel.create (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8108:29)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/SpringBootApplication/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.js:22:30)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:139:9",
+              "visit (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:200:9)",
+              "visit (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:197:9)",
+              "injectMetadataResources (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:128:5)",
+              "Object.synthesize (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:17:5)",
+              "App.synth (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-kernel-ZbtNfy\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8183:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8795:24)",
+              "C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8183:107",
+              "Kernel._ensureSync (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8776:28)",
+              "Kernel.invoke (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:8183:34)",
+              "KernelHost.processRequest (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9692:36)",
+              "KernelHost.run (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9655:22)",
+              "Immediate._onImmediate (C:\\Users\\Sean\\AppData\\Local\\Temp\\jsii-java-runtime11397203079277357894\\lib\\program.js:9656:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "SpringBootApplication"
+    }
+  }
+}

@@ -1,0 +1,1106 @@
+{
+  "Resources": {
+    "networkvpcFB59E56F": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/Resource"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/18",
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "AvailabilityZone": "us-east-2a",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "prod-publicSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/Subnet"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet1RouteTableCF3181EC": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/RouteTable"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet1RouteTableAssociation5DA8D171": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "networkvpcprodpublicSubnetSubnet1RouteTableCF3181EC"
+        },
+        "SubnetId": {
+          "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/RouteTableAssociation"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet1DefaultRoute5110BBFF": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "networkvpcprodpublicSubnetSubnet1RouteTableCF3181EC"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "networkvpcIGWA706E8BE"
+        }
+      },
+      "DependsOn": [
+        "networkvpcVPCGWFC117BC5"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/DefaultRoute"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet2SubnetAC520044": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.64.0/18",
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "AvailabilityZone": "us-east-2b",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "prod-publicSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/Subnet"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet2RouteTableFD010EAA": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/RouteTable"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet2RouteTableAssociation2953F5F9": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "networkvpcprodpublicSubnetSubnet2RouteTableFD010EAA"
+        },
+        "SubnetId": {
+          "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/RouteTableAssociation"
+      }
+    },
+    "networkvpcprodpublicSubnetSubnet2DefaultRouteA27E1742": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "networkvpcprodpublicSubnetSubnet2RouteTableFD010EAA"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "networkvpcIGWA706E8BE"
+        }
+      },
+      "DependsOn": [
+        "networkvpcVPCGWFC117BC5"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/DefaultRoute"
+      }
+    },
+    "networkvpcprodisolatedSubnetSubnet1Subnet42478409": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.128.0/18",
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "AvailabilityZone": "us-east-2a",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "prod-isolatedSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/Subnet"
+      }
+    },
+    "networkvpcprodisolatedSubnetSubnet1RouteTable4688031D": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/RouteTable"
+      }
+    },
+    "networkvpcprodisolatedSubnetSubnet1RouteTableAssociationFA0F6C82": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "networkvpcprodisolatedSubnetSubnet1RouteTable4688031D"
+        },
+        "SubnetId": {
+          "Ref": "networkvpcprodisolatedSubnetSubnet1Subnet42478409"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/RouteTableAssociation"
+      }
+    },
+    "networkvpcprodisolatedSubnetSubnet2SubnetABE7751B": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.192.0/18",
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "AvailabilityZone": "us-east-2b",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "prod-isolatedSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/Subnet"
+      }
+    },
+    "networkvpcprodisolatedSubnetSubnet2RouteTable744C94FE": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/RouteTable"
+      }
+    },
+    "networkvpcprodisolatedSubnetSubnet2RouteTableAssociationE65126DE": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "networkvpcprodisolatedSubnetSubnet2RouteTable744C94FE"
+        },
+        "SubnetId": {
+          "Ref": "networkvpcprodisolatedSubnetSubnet2SubnetABE7751B"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/RouteTableAssociation"
+      }
+    },
+    "networkvpcIGWA706E8BE": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          },
+          {
+            "Key": "Name",
+            "Value": "SpringBootApplication/network/vpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/IGW"
+      }
+    },
+    "networkvpcVPCGWFC117BC5": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "InternetGatewayId": {
+          "Ref": "networkvpcIGWA706E8BE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpc/VPCGW"
+      }
+    },
+    "networkcluster9BBEF63B": {
+      "Type": "AWS::ECS::Cluster",
+      "Properties": {
+        "ClusterName": "prod-ecsCluster",
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/cluster/Resource"
+      }
+    },
+    "networkloadbalancerSecurityGroup6229255D": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Public access to the load balancer.",
+        "GroupName": "prod-loadbalancerSecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ],
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/loadbalancerSecurityGroup/Resource"
+      }
+    },
+    "networkingressToLoadbalancerEB1B6CE2": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0",
+        "GroupId": {
+          "Fn::GetAtt": [
+            "networkloadbalancerSecurityGroup6229255D",
+            "GroupId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/ingressToLoadbalancer"
+      }
+    },
+    "networkloadbalancerB8F249E9": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "LoadBalancerAttributes": [
+          {
+            "Key": "deletion_protection.enabled",
+            "Value": "false"
+          }
+        ],
+        "Name": "prod-loadbalancer",
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "networkloadbalancerSecurityGroup6229255D",
+              "GroupId"
+            ]
+          }
+        ],
+        "Subnets": [
+          {
+            "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+          },
+          {
+            "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ],
+        "Type": "application"
+      },
+      "DependsOn": [
+        "networkvpcprodpublicSubnetSubnet1DefaultRoute5110BBFF",
+        "networkvpcprodpublicSubnetSubnet2DefaultRouteA27E1742"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/loadbalancer/Resource"
+      }
+    },
+    "networkloadbalancerhttpListener2710DF25": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "networkdummyTargetGroupC0022A32"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "networkloadbalancerB8F249E9"
+        },
+        "Port": 80,
+        "Protocol": "HTTP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/loadbalancer/httpListener/Resource"
+      }
+    },
+    "networkdummyTargetGroupC0022A32": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Name": "prod-no-op-targetGroup",
+        "Port": 8080,
+        "Protocol": "HTTP",
+        "Tags": [
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ],
+        "TargetType": "ip",
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/dummyTargetGroup/Resource"
+      }
+    },
+    "networkvpcId0F779775": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkvpcFB59E56F"
+        },
+        "Name": "prod-Network-vpcId",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/vpcId/Resource"
+      }
+    },
+    "networkhttpListenerC3DF163D": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkloadbalancerhttpListener2710DF25"
+        },
+        "Name": "prod-Network-httpListenerArn",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/httpListener/Resource"
+      }
+    },
+    "networkhttpsListenerDDBE55BA": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": "null",
+        "Name": "prod-Network-httpsListenerArn",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/httpsListener/Resource"
+      }
+    },
+    "networkloadBalancerSecurityGroupId680E5042": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Fn::GetAtt": [
+            "networkloadbalancerSecurityGroup6229255D",
+            "GroupId"
+          ]
+        },
+        "Name": "prod-Network-loadBalancerSecurityGroupId",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/loadBalancerSecurityGroupId/Resource"
+      }
+    },
+    "networkecsClusterName5B27EF69": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkcluster9BBEF63B"
+        },
+        "Name": "prod-Network-ecsClusterName",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/ecsClusterName/Resource"
+      }
+    },
+    "networkavailabilityZoneOneDCF9B1FA": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": "us-east-2a",
+        "Name": "prod-Network-availabilityZoneOne",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/availabilityZoneOne/Resource"
+      }
+    },
+    "networkavailabilityZoneTwo90769EFE": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": "us-east-2b",
+        "Name": "prod-Network-availabilityZoneTwo",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/availabilityZoneTwo/Resource"
+      }
+    },
+    "networkisolatedSubnetOne71EAA7DC": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkvpcprodisolatedSubnetSubnet1Subnet42478409"
+        },
+        "Name": "prod-Network-isolatedSubnetIdOne",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/isolatedSubnetOne/Resource"
+      }
+    },
+    "networkisolatedSubnetTwo0385329F": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkvpcprodisolatedSubnetSubnet2SubnetABE7751B"
+        },
+        "Name": "prod-Network-isolatedSubnetIdTwo",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/isolatedSubnetTwo/Resource"
+      }
+    },
+    "networkpublicSubnetOne3CB3BA5F": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+        },
+        "Name": "prod-Network-publicSubnetIdOne",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/publicSubnetOne/Resource"
+      }
+    },
+    "networkpublicSubnetTwoFEC29B5A": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+        },
+        "Name": "prod-Network-publicSubnetIdTwo",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/publicSubnetTwo/Resource"
+      }
+    },
+    "networkloadBalancerArnD0A6B0BC": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Ref": "networkloadbalancerB8F249E9"
+        },
+        "Name": "prod-Network-loadBalancerArn",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/loadBalancerArn/Resource"
+      }
+    },
+    "networkloadBalancerDnsName5BFC3B60": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Fn::GetAtt": [
+            "networkloadbalancerB8F249E9",
+            "DNSName"
+          ]
+        },
+        "Name": "prod-Network-loadBalancerDnsName",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/loadBalancerDnsName/Resource"
+      }
+    },
+    "networkloadBalancerCanonicalHostedZoneId880D0C9C": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Fn::GetAtt": [
+            "networkloadbalancerB8F249E9",
+            "CanonicalHostedZoneID"
+          ]
+        },
+        "Name": "prod-Network-loadBalancerCanonicalHostedZoneId",
+        "Tags": {
+          "environment": "prod"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/network/loadBalancerCanonicalHostedZoneId/Resource"
+      }
+    },
+    "ServicetargetGroupA8A17F03": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "HealthCheckIntervalSeconds": 15,
+        "HealthCheckPath": "/",
+        "HealthCheckPort": "8080",
+        "HealthCheckProtocol": "HTTP",
+        "HealthCheckTimeoutSeconds": 5,
+        "HealthyThresholdCount": 2,
+        "Port": 8080,
+        "Protocol": "HTTP",
+        "Tags": [
+          {
+            "Key": "application",
+            "Value": "SpringBootApplication"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ],
+        "TargetGroupAttributes": [],
+        "TargetType": "ip",
+        "UnhealthyThresholdCount": 8,
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/targetGroup"
+      }
+    },
+    "ServicehttpListenerRule46A86AF4": {
+      "Type": "AWS::ElasticLoadBalancingV2::ListenerRule",
+      "Properties": {
+        "Actions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "ServicetargetGroupA8A17F03"
+            },
+            "Type": "forward"
+          }
+        ],
+        "Conditions": [
+          {
+            "Field": "path-pattern",
+            "Values": [
+              "*"
+            ]
+          }
+        ],
+        "ListenerArn": {
+          "Ref": "networkloadbalancerhttpListener2710DF25"
+        },
+        "Priority": 2
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/httpListenerRule"
+      }
+    },
+    "ServiceecsLogGroup1EA96AB9": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "prod-SpringBootApplication-logs",
+        "RetentionInDays": 7
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/ecsLogGroup/Resource"
+      }
+    },
+    "ServiceecsTaskExecutionRole0EBE7C5D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "Path": "/",
+        "Policies": [
+          {
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Action": [
+                    "ecr:GetAuthorizationToken",
+                    "ecr:BatchCheckLayerAvailability",
+                    "ecr:GetDownloadUrlForLayer",
+                    "ecr:BatchGetImage",
+                    "logs:CreateLogStream",
+                    "logs:PutLogEvents"
+                  ],
+                  "Effect": "Allow",
+                  "Resource": "*"
+                }
+              ],
+              "Version": "2012-10-17"
+            },
+            "PolicyName": "prod-SpringBootApplication-ecsTaskExecutionRolePolicy"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "application",
+            "Value": "SpringBootApplication"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/ecsTaskExecutionRole/Resource"
+      }
+    },
+    "ServiceecsTaskRole4E8999D2": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "Path": "/",
+        "Tags": [
+          {
+            "Key": "application",
+            "Value": "SpringBootApplication"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/ecsTaskRole/Resource"
+      }
+    },
+    "ServicetaskDefinitionC6531610": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Cpu": 256,
+            "Environment": [],
+            "Image": "docker.io/seanimus/todo-app-v1:latest",
+            "LogConfiguration": {
+              "LogDriver": "awslogs",
+              "Options": {
+                "awslogs-stream-prefix": "prod-SpringBootApplication-stream",
+                "awslogs-datetime-format": "%Y-%m-%dT%H:%M:%S.%f%z",
+                "awslogs-region": "us-east-2",
+                "awslogs-group": {
+                  "Ref": "ServiceecsLogGroup1EA96AB9"
+                }
+              }
+            },
+            "Memory": 512,
+            "Name": "prod-SpringBootApplication-container",
+            "PortMappings": [
+              {
+                "ContainerPort": 8080
+              }
+            ]
+          }
+        ],
+        "Cpu": "256",
+        "ExecutionRoleArn": {
+          "Fn::GetAtt": [
+            "ServiceecsTaskExecutionRole0EBE7C5D",
+            "Arn"
+          ]
+        },
+        "Memory": "512",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "Tags": [
+          {
+            "Key": "application",
+            "Value": "SpringBootApplication"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "ServiceecsTaskRole4E8999D2",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/taskDefinition"
+      }
+    },
+    "ServiceecsSecurityGroup6D8FF04D": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "SecurityGroup for the ECS containers",
+        "Tags": [
+          {
+            "Key": "application",
+            "Value": "SpringBootApplication"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ],
+        "VpcId": {
+          "Ref": "networkvpcFB59E56F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/ecsSecurityGroup"
+      }
+    },
+    "ServiceecsIngressFromSelf8949B55F": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "-1",
+        "GroupId": {
+          "Fn::GetAtt": [
+            "ServiceecsSecurityGroup6D8FF04D",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "ServiceecsSecurityGroup6D8FF04D",
+            "GroupId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/ecsIngressFromSelf"
+      }
+    },
+    "ServiceecsIngressFromLoadbalancer62209FDD": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "-1",
+        "GroupId": {
+          "Fn::GetAtt": [
+            "ServiceecsSecurityGroup6D8FF04D",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "networkloadbalancerSecurityGroup6229255D",
+            "GroupId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/ecsIngressFromLoadbalancer"
+      }
+    },
+    "ServiceecsService30915DD1": {
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "networkcluster9BBEF63B"
+        },
+        "DeploymentConfiguration": {
+          "MaximumPercent": 200,
+          "MinimumHealthyPercent": 50
+        },
+        "DesiredCount": 2,
+        "LaunchType": "FARGATE",
+        "LoadBalancers": [
+          {
+            "ContainerName": "prod-SpringBootApplication-container",
+            "ContainerPort": 8080,
+            "TargetGroupArn": {
+              "Ref": "ServicetargetGroupA8A17F03"
+            }
+          }
+        ],
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "ENABLED",
+            "SecurityGroups": [
+              {
+                "Fn::GetAtt": [
+                  "ServiceecsSecurityGroup6D8FF04D",
+                  "GroupId"
+                ]
+              }
+            ],
+            "Subnets": [
+              {
+                "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+              },
+              {
+                "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+              }
+            ]
+          }
+        },
+        "Tags": [
+          {
+            "Key": "application",
+            "Value": "SpringBootApplication"
+          },
+          {
+            "Key": "environment",
+            "Value": "prod"
+          }
+        ],
+        "TaskDefinition": {
+          "Ref": "ServicetaskDefinitionC6531610"
+        }
+      },
+      "DependsOn": [
+        "ServicehttpListenerRule46A86AF4"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/Service/ecsService"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAACn1Ry26DMBD8ltwdJ1Q99NiUSlGqSEUQ5b44G7rF2MgPogjx7zUEQtpDT56dnX3MOuJR9MzXi1e42KU4latWaIO8zRyIksVaWWe8cCxFq70RyOKz+vSu9q5HE9uxvrxF8cTbYy361DGJWeJzSSLzucJBPqNUe4cHyCXO/MxtrNWCwJFWdzFLDDXgcO6xUw5NwNvAXuA6Dh2jjQsGvipUjmUovCF33Rrt62Hcv8ROFQat7RgKy9tYehvG9KoHeABbvuOZFE07Zmga6g+BEqwjITWccpCgBKmiCWfZ1HW4xeBpH3JvQ+7W7Vf8qKMwT42aCT/kD2CKYH9y8SecKlIvw1rWVv2nmrBNAgYqHJ3cg45JXQTDe13MLUbcMYJQnurbd/Vv13XsAxpYRRFf85fFtyVaGq8cVcjT2/sDKuR7J1wCAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "SpringBootApplication/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "loadbalancerDnsName": {
+      "Value": {
+        "Fn::GetAtt": [
+          "networkloadbalancerB8F249E9",
+          "DNSName"
+        ]
+      },
+      "Export": {
+        "Name": "loadbalancerDnsName"
+      }
+    }
+  }
+}

@@ -1,0 +1,1679 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.114.0"
+        }
+      },
+      "SpringBootApplication": {
+        "id": "SpringBootApplication",
+        "path": "SpringBootApplication",
+        "children": {
+          "network": {
+            "id": "network",
+            "path": "SpringBootApplication/network",
+            "children": {
+              "vpc": {
+                "id": "vpc",
+                "path": "SpringBootApplication/network/vpc",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/vpc/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.0.0/16",
+                        "enableDnsHostnames": true,
+                        "enableDnsSupport": true,
+                        "instanceTenancy": "default",
+                        "tags": [
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "SpringBootApplication/network/vpc"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnVPC",
+                      "version": "1.114.0"
+                    }
+                  },
+                  "prod-publicSubnetSubnet1": {
+                    "id": "prod-publicSubnetSubnet1",
+                    "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1",
+                    "children": {
+                      "Subnet": {
+                        "id": "Subnet",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/Subnet",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                          "aws:cdk:cloudformation:props": {
+                            "cidrBlock": "10.0.0.0/18",
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "availabilityZone": "us-east-2a",
+                            "mapPublicIpOnLaunch": true,
+                            "tags": [
+                              {
+                                "key": "aws-cdk:subnet-name",
+                                "value": "prod-publicSubnet"
+                              },
+                              {
+                                "key": "aws-cdk:subnet-type",
+                                "value": "Public"
+                              },
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "Acl": {
+                        "id": "Acl",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/Acl",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/core.Resource",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTable": {
+                        "id": "RouteTable",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/RouteTable",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                          "aws:cdk:cloudformation:props": {
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "tags": [
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTableAssociation": {
+                        "id": "RouteTableAssociation",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/RouteTableAssociation",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                          "aws:cdk:cloudformation:props": {
+                            "routeTableId": {
+                              "Ref": "networkvpcprodpublicSubnetSubnet1RouteTableCF3181EC"
+                            },
+                            "subnetId": {
+                              "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "DefaultRoute": {
+                        "id": "DefaultRoute",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet1/DefaultRoute",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                          "aws:cdk:cloudformation:props": {
+                            "routeTableId": {
+                              "Ref": "networkvpcprodpublicSubnetSubnet1RouteTableCF3181EC"
+                            },
+                            "destinationCidrBlock": "0.0.0.0/0",
+                            "gatewayId": {
+                              "Ref": "networkvpcIGWA706E8BE"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnRoute",
+                          "version": "1.114.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.PublicSubnet",
+                      "version": "1.114.0"
+                    }
+                  },
+                  "prod-publicSubnetSubnet2": {
+                    "id": "prod-publicSubnetSubnet2",
+                    "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2",
+                    "children": {
+                      "Subnet": {
+                        "id": "Subnet",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/Subnet",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                          "aws:cdk:cloudformation:props": {
+                            "cidrBlock": "10.0.64.0/18",
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "availabilityZone": "us-east-2b",
+                            "mapPublicIpOnLaunch": true,
+                            "tags": [
+                              {
+                                "key": "aws-cdk:subnet-name",
+                                "value": "prod-publicSubnet"
+                              },
+                              {
+                                "key": "aws-cdk:subnet-type",
+                                "value": "Public"
+                              },
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "Acl": {
+                        "id": "Acl",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/Acl",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/core.Resource",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTable": {
+                        "id": "RouteTable",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/RouteTable",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                          "aws:cdk:cloudformation:props": {
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "tags": [
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTableAssociation": {
+                        "id": "RouteTableAssociation",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/RouteTableAssociation",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                          "aws:cdk:cloudformation:props": {
+                            "routeTableId": {
+                              "Ref": "networkvpcprodpublicSubnetSubnet2RouteTableFD010EAA"
+                            },
+                            "subnetId": {
+                              "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "DefaultRoute": {
+                        "id": "DefaultRoute",
+                        "path": "SpringBootApplication/network/vpc/prod-publicSubnetSubnet2/DefaultRoute",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                          "aws:cdk:cloudformation:props": {
+                            "routeTableId": {
+                              "Ref": "networkvpcprodpublicSubnetSubnet2RouteTableFD010EAA"
+                            },
+                            "destinationCidrBlock": "0.0.0.0/0",
+                            "gatewayId": {
+                              "Ref": "networkvpcIGWA706E8BE"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnRoute",
+                          "version": "1.114.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.PublicSubnet",
+                      "version": "1.114.0"
+                    }
+                  },
+                  "prod-isolatedSubnetSubnet1": {
+                    "id": "prod-isolatedSubnetSubnet1",
+                    "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1",
+                    "children": {
+                      "Subnet": {
+                        "id": "Subnet",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/Subnet",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                          "aws:cdk:cloudformation:props": {
+                            "cidrBlock": "10.0.128.0/18",
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "availabilityZone": "us-east-2a",
+                            "mapPublicIpOnLaunch": false,
+                            "tags": [
+                              {
+                                "key": "aws-cdk:subnet-name",
+                                "value": "prod-isolatedSubnet"
+                              },
+                              {
+                                "key": "aws-cdk:subnet-type",
+                                "value": "Isolated"
+                              },
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "Acl": {
+                        "id": "Acl",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/Acl",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/core.Resource",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTable": {
+                        "id": "RouteTable",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/RouteTable",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                          "aws:cdk:cloudformation:props": {
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "tags": [
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTableAssociation": {
+                        "id": "RouteTableAssociation",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet1/RouteTableAssociation",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                          "aws:cdk:cloudformation:props": {
+                            "routeTableId": {
+                              "Ref": "networkvpcprodisolatedSubnetSubnet1RouteTable4688031D"
+                            },
+                            "subnetId": {
+                              "Ref": "networkvpcprodisolatedSubnetSubnet1Subnet42478409"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                          "version": "1.114.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
+                      "version": "1.114.0"
+                    }
+                  },
+                  "prod-isolatedSubnetSubnet2": {
+                    "id": "prod-isolatedSubnetSubnet2",
+                    "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2",
+                    "children": {
+                      "Subnet": {
+                        "id": "Subnet",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/Subnet",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                          "aws:cdk:cloudformation:props": {
+                            "cidrBlock": "10.0.192.0/18",
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "availabilityZone": "us-east-2b",
+                            "mapPublicIpOnLaunch": false,
+                            "tags": [
+                              {
+                                "key": "aws-cdk:subnet-name",
+                                "value": "prod-isolatedSubnet"
+                              },
+                              {
+                                "key": "aws-cdk:subnet-type",
+                                "value": "Isolated"
+                              },
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "Acl": {
+                        "id": "Acl",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/Acl",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/core.Resource",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTable": {
+                        "id": "RouteTable",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/RouteTable",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                          "aws:cdk:cloudformation:props": {
+                            "vpcId": {
+                              "Ref": "networkvpcFB59E56F"
+                            },
+                            "tags": [
+                              {
+                                "key": "environment",
+                                "value": "prod"
+                              },
+                              {
+                                "key": "Name",
+                                "value": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
+                          "version": "1.114.0"
+                        }
+                      },
+                      "RouteTableAssociation": {
+                        "id": "RouteTableAssociation",
+                        "path": "SpringBootApplication/network/vpc/prod-isolatedSubnetSubnet2/RouteTableAssociation",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                          "aws:cdk:cloudformation:props": {
+                            "routeTableId": {
+                              "Ref": "networkvpcprodisolatedSubnetSubnet2RouteTable744C94FE"
+                            },
+                            "subnetId": {
+                              "Ref": "networkvpcprodisolatedSubnetSubnet2SubnetABE7751B"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
+                          "version": "1.114.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
+                      "version": "1.114.0"
+                    }
+                  },
+                  "IGW": {
+                    "id": "IGW",
+                    "path": "SpringBootApplication/network/vpc/IGW",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "tags": [
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "SpringBootApplication/network/vpc"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnInternetGateway",
+                      "version": "1.114.0"
+                    }
+                  },
+                  "VPCGW": {
+                    "id": "VPCGW",
+                    "path": "SpringBootApplication/network/vpc/VPCGW",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "networkvpcFB59E56F"
+                        },
+                        "internetGatewayId": {
+                          "Ref": "networkvpcIGWA706E8BE"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnVPCGatewayAttachment",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.Vpc",
+                  "version": "1.114.0"
+                }
+              },
+              "cluster": {
+                "id": "cluster",
+                "path": "SpringBootApplication/network/cluster",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/cluster/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                      "aws:cdk:cloudformation:props": {
+                        "clusterName": "prod-ecsCluster",
+                        "tags": [
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ecs.CfnCluster",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ecs.Cluster",
+                  "version": "1.114.0"
+                }
+              },
+              "loadbalancerSecurityGroup": {
+                "id": "loadbalancerSecurityGroup",
+                "path": "SpringBootApplication/network/loadbalancerSecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/loadbalancerSecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Public access to the load balancer.",
+                        "groupName": "prod-loadbalancerSecurityGroup",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "securityGroupIngress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "description": "Allow from anyone on port 80"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          }
+                        ],
+                        "vpcId": {
+                          "Ref": "networkvpcFB59E56F"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                  "version": "1.114.0"
+                }
+              },
+              "ingressToLoadbalancer": {
+                "id": "ingressToLoadbalancer",
+                "path": "SpringBootApplication/network/ingressToLoadbalancer",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "ipProtocol": "-1",
+                    "cidrIp": "0.0.0.0/0",
+                    "groupId": {
+                      "Fn::GetAtt": [
+                        "networkloadbalancerSecurityGroup6229255D",
+                        "GroupId"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
+                  "version": "1.114.0"
+                }
+              },
+              "loadbalancer": {
+                "id": "loadbalancer",
+                "path": "SpringBootApplication/network/loadbalancer",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/loadbalancer/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                      "aws:cdk:cloudformation:props": {
+                        "loadBalancerAttributes": [
+                          {
+                            "key": "deletion_protection.enabled",
+                            "value": "false"
+                          }
+                        ],
+                        "name": "prod-loadbalancer",
+                        "scheme": "internet-facing",
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "networkloadbalancerSecurityGroup6229255D",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnets": [
+                          {
+                            "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+                          },
+                          {
+                            "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          }
+                        ],
+                        "type": "application"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnLoadBalancer",
+                      "version": "1.114.0"
+                    }
+                  },
+                  "httpListener": {
+                    "id": "httpListener",
+                    "path": "SpringBootApplication/network/loadbalancer/httpListener",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "SpringBootApplication/network/loadbalancer/httpListener/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                          "aws:cdk:cloudformation:props": {
+                            "defaultActions": [
+                              {
+                                "type": "forward",
+                                "targetGroupArn": {
+                                  "Ref": "networkdummyTargetGroupC0022A32"
+                                }
+                              }
+                            ],
+                            "loadBalancerArn": {
+                              "Ref": "networkloadbalancerB8F249E9"
+                            },
+                            "port": 80,
+                            "protocol": "HTTP"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnListener",
+                          "version": "1.114.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationListener",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationLoadBalancer",
+                  "version": "1.114.0"
+                }
+              },
+              "dummyTargetGroup": {
+                "id": "dummyTargetGroup",
+                "path": "SpringBootApplication/network/dummyTargetGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/dummyTargetGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "prod-no-op-targetGroup",
+                        "port": 8080,
+                        "protocol": "HTTP",
+                        "tags": [
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          }
+                        ],
+                        "targetType": "ip",
+                        "vpcId": {
+                          "Ref": "networkvpcFB59E56F"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnTargetGroup",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup",
+                  "version": "1.114.0"
+                }
+              },
+              "vpcId": {
+                "id": "vpcId",
+                "path": "SpringBootApplication/network/vpcId",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/vpcId/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkvpcFB59E56F"
+                        },
+                        "name": "prod-Network-vpcId",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "httpListener": {
+                "id": "httpListener",
+                "path": "SpringBootApplication/network/httpListener",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/httpListener/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkloadbalancerhttpListener2710DF25"
+                        },
+                        "name": "prod-Network-httpListenerArn",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "httpsListener": {
+                "id": "httpsListener",
+                "path": "SpringBootApplication/network/httpsListener",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/httpsListener/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": "null",
+                        "name": "prod-Network-httpsListenerArn",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "loadBalancerSecurityGroupId": {
+                "id": "loadBalancerSecurityGroupId",
+                "path": "SpringBootApplication/network/loadBalancerSecurityGroupId",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/loadBalancerSecurityGroupId/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Fn::GetAtt": [
+                            "networkloadbalancerSecurityGroup6229255D",
+                            "GroupId"
+                          ]
+                        },
+                        "name": "prod-Network-loadBalancerSecurityGroupId",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsClusterName": {
+                "id": "ecsClusterName",
+                "path": "SpringBootApplication/network/ecsClusterName",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/ecsClusterName/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkcluster9BBEF63B"
+                        },
+                        "name": "prod-Network-ecsClusterName",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "availabilityZoneOne": {
+                "id": "availabilityZoneOne",
+                "path": "SpringBootApplication/network/availabilityZoneOne",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/availabilityZoneOne/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": "us-east-2a",
+                        "name": "prod-Network-availabilityZoneOne",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "availabilityZoneTwo": {
+                "id": "availabilityZoneTwo",
+                "path": "SpringBootApplication/network/availabilityZoneTwo",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/availabilityZoneTwo/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": "us-east-2b",
+                        "name": "prod-Network-availabilityZoneTwo",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "isolatedSubnetOne": {
+                "id": "isolatedSubnetOne",
+                "path": "SpringBootApplication/network/isolatedSubnetOne",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/isolatedSubnetOne/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkvpcprodisolatedSubnetSubnet1Subnet42478409"
+                        },
+                        "name": "prod-Network-isolatedSubnetIdOne",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "isolatedSubnetTwo": {
+                "id": "isolatedSubnetTwo",
+                "path": "SpringBootApplication/network/isolatedSubnetTwo",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/isolatedSubnetTwo/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkvpcprodisolatedSubnetSubnet2SubnetABE7751B"
+                        },
+                        "name": "prod-Network-isolatedSubnetIdTwo",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "publicSubnetOne": {
+                "id": "publicSubnetOne",
+                "path": "SpringBootApplication/network/publicSubnetOne",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/publicSubnetOne/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+                        },
+                        "name": "prod-Network-publicSubnetIdOne",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "publicSubnetTwo": {
+                "id": "publicSubnetTwo",
+                "path": "SpringBootApplication/network/publicSubnetTwo",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/publicSubnetTwo/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+                        },
+                        "name": "prod-Network-publicSubnetIdTwo",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "loadBalancerArn": {
+                "id": "loadBalancerArn",
+                "path": "SpringBootApplication/network/loadBalancerArn",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/loadBalancerArn/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Ref": "networkloadbalancerB8F249E9"
+                        },
+                        "name": "prod-Network-loadBalancerArn",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "loadBalancerDnsName": {
+                "id": "loadBalancerDnsName",
+                "path": "SpringBootApplication/network/loadBalancerDnsName",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/loadBalancerDnsName/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Fn::GetAtt": [
+                            "networkloadbalancerB8F249E9",
+                            "DNSName"
+                          ]
+                        },
+                        "name": "prod-Network-loadBalancerDnsName",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              },
+              "loadBalancerCanonicalHostedZoneId": {
+                "id": "loadBalancerCanonicalHostedZoneId",
+                "path": "SpringBootApplication/network/loadBalancerCanonicalHostedZoneId",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/network/loadBalancerCanonicalHostedZoneId/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "type": "String",
+                        "value": {
+                          "Fn::GetAtt": [
+                            "networkloadbalancerB8F249E9",
+                            "CanonicalHostedZoneID"
+                          ]
+                        },
+                        "name": "prod-Network-loadBalancerCanonicalHostedZoneId",
+                        "tags": {
+                          "environment": "prod"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ssm.CfnParameter",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ssm.StringParameter",
+                  "version": "1.114.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.114.0"
+            }
+          },
+          "Service": {
+            "id": "Service",
+            "path": "SpringBootApplication/Service",
+            "children": {
+              "targetGroup": {
+                "id": "targetGroup",
+                "path": "SpringBootApplication/Service/targetGroup",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "healthCheckIntervalSeconds": 15,
+                    "healthCheckPath": "/",
+                    "healthCheckPort": "8080",
+                    "healthCheckProtocol": "HTTP",
+                    "healthCheckTimeoutSeconds": 5,
+                    "healthyThresholdCount": 2,
+                    "port": 8080,
+                    "protocol": "HTTP",
+                    "tags": [
+                      {
+                        "key": "application",
+                        "value": "SpringBootApplication"
+                      },
+                      {
+                        "key": "environment",
+                        "value": "prod"
+                      }
+                    ],
+                    "targetGroupAttributes": [],
+                    "targetType": "ip",
+                    "unhealthyThresholdCount": 8,
+                    "vpcId": {
+                      "Ref": "networkvpcFB59E56F"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnTargetGroup",
+                  "version": "1.114.0"
+                }
+              },
+              "httpListenerRule": {
+                "id": "httpListenerRule",
+                "path": "SpringBootApplication/Service/httpListenerRule",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::ListenerRule",
+                  "aws:cdk:cloudformation:props": {
+                    "actions": [
+                      {
+                        "type": "forward",
+                        "targetGroupArn": {
+                          "Ref": "ServicetargetGroupA8A17F03"
+                        }
+                      }
+                    ],
+                    "conditions": [
+                      {
+                        "field": "path-pattern",
+                        "values": [
+                          "*"
+                        ]
+                      }
+                    ],
+                    "listenerArn": {
+                      "Ref": "networkloadbalancerhttpListener2710DF25"
+                    },
+                    "priority": 2
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnListenerRule",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsLogGroup": {
+                "id": "ecsLogGroup",
+                "path": "SpringBootApplication/Service/ecsLogGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/Service/ecsLogGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "logGroupName": "prod-SpringBootApplication-logs",
+                        "retentionInDays": 7
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-logs.CfnLogGroup",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-logs.LogGroup",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsTaskExecutionRole": {
+                "id": "ecsTaskExecutionRole",
+                "path": "SpringBootApplication/Service/ecsTaskExecutionRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/Service/ecsTaskExecutionRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ecs-tasks.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "path": "/",
+                        "policies": [
+                          {
+                            "policyName": "prod-SpringBootApplication-ecsTaskExecutionRolePolicy",
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "ecr:GetAuthorizationToken",
+                                    "ecr:BatchCheckLayerAvailability",
+                                    "ecr:GetDownloadUrlForLayer",
+                                    "ecr:BatchGetImage",
+                                    "logs:CreateLogStream",
+                                    "logs:PutLogEvents"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "application",
+                            "value": "SpringBootApplication"
+                          },
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsTaskRole": {
+                "id": "ecsTaskRole",
+                "path": "SpringBootApplication/Service/ecsTaskRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "SpringBootApplication/Service/ecsTaskRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ecs-tasks.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "path": "/",
+                        "tags": [
+                          {
+                            "key": "application",
+                            "value": "SpringBootApplication"
+                          },
+                          {
+                            "key": "environment",
+                            "value": "prod"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.114.0"
+                }
+              },
+              "taskDefinition": {
+                "id": "taskDefinition",
+                "path": "SpringBootApplication/Service/taskDefinition",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                  "aws:cdk:cloudformation:props": {
+                    "containerDefinitions": [
+                      {
+                        "cpu": 256,
+                        "environment": [],
+                        "image": "docker.io/seanimus/todo-app-v1:latest",
+                        "logConfiguration": {
+                          "logDriver": "awslogs",
+                          "options": {
+                            "awslogs-stream-prefix": "prod-SpringBootApplication-stream",
+                            "awslogs-datetime-format": "%Y-%m-%dT%H:%M:%S.%f%z",
+                            "awslogs-region": "us-east-2",
+                            "awslogs-group": {
+                              "Ref": "ServiceecsLogGroup1EA96AB9"
+                            }
+                          }
+                        },
+                        "memory": 512,
+                        "name": "prod-SpringBootApplication-container",
+                        "portMappings": [
+                          {
+                            "containerPort": 8080
+                          }
+                        ]
+                      }
+                    ],
+                    "cpu": "256",
+                    "executionRoleArn": {
+                      "Fn::GetAtt": [
+                        "ServiceecsTaskExecutionRole0EBE7C5D",
+                        "Arn"
+                      ]
+                    },
+                    "memory": "512",
+                    "networkMode": "awsvpc",
+                    "requiresCompatibilities": [
+                      "FARGATE"
+                    ],
+                    "tags": [
+                      {
+                        "key": "application",
+                        "value": "SpringBootApplication"
+                      },
+                      {
+                        "key": "environment",
+                        "value": "prod"
+                      }
+                    ],
+                    "taskRoleArn": {
+                      "Fn::GetAtt": [
+                        "ServiceecsTaskRole4E8999D2",
+                        "Arn"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ecs.CfnTaskDefinition",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsSecurityGroup": {
+                "id": "ecsSecurityGroup",
+                "path": "SpringBootApplication/Service/ecsSecurityGroup",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "SecurityGroup for the ECS containers",
+                    "tags": [
+                      {
+                        "key": "application",
+                        "value": "SpringBootApplication"
+                      },
+                      {
+                        "key": "environment",
+                        "value": "prod"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "networkvpcFB59E56F"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsIngressFromSelf": {
+                "id": "ecsIngressFromSelf",
+                "path": "SpringBootApplication/Service/ecsIngressFromSelf",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "ipProtocol": "-1",
+                    "groupId": {
+                      "Fn::GetAtt": [
+                        "ServiceecsSecurityGroup6D8FF04D",
+                        "GroupId"
+                      ]
+                    },
+                    "sourceSecurityGroupId": {
+                      "Fn::GetAtt": [
+                        "ServiceecsSecurityGroup6D8FF04D",
+                        "GroupId"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsIngressFromLoadbalancer": {
+                "id": "ecsIngressFromLoadbalancer",
+                "path": "SpringBootApplication/Service/ecsIngressFromLoadbalancer",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "ipProtocol": "-1",
+                    "groupId": {
+                      "Fn::GetAtt": [
+                        "ServiceecsSecurityGroup6D8FF04D",
+                        "GroupId"
+                      ]
+                    },
+                    "sourceSecurityGroupId": {
+                      "Fn::GetAtt": [
+                        "networkloadbalancerSecurityGroup6229255D",
+                        "GroupId"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
+                  "version": "1.114.0"
+                }
+              },
+              "ecsService": {
+                "id": "ecsService",
+                "path": "SpringBootApplication/Service/ecsService",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                  "aws:cdk:cloudformation:props": {
+                    "cluster": {
+                      "Ref": "networkcluster9BBEF63B"
+                    },
+                    "deploymentConfiguration": {
+                      "maximumPercent": 200,
+                      "minimumHealthyPercent": 50
+                    },
+                    "desiredCount": 2,
+                    "launchType": "FARGATE",
+                    "loadBalancers": [
+                      {
+                        "containerPort": 8080,
+                        "containerName": "prod-SpringBootApplication-container",
+                        "targetGroupArn": {
+                          "Ref": "ServicetargetGroupA8A17F03"
+                        }
+                      }
+                    ],
+                    "networkConfiguration": {
+                      "awsvpcConfiguration": {
+                        "subnets": [
+                          {
+                            "Ref": "networkvpcprodpublicSubnetSubnet1Subnet7A28AA13"
+                          },
+                          {
+                            "Ref": "networkvpcprodpublicSubnetSubnet2SubnetAC520044"
+                          }
+                        ],
+                        "assignPublicIp": "ENABLED",
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "ServiceecsSecurityGroup6D8FF04D",
+                              "GroupId"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "tags": [
+                      {
+                        "key": "application",
+                        "value": "SpringBootApplication"
+                      },
+                      {
+                        "key": "environment",
+                        "value": "prod"
+                      }
+                    ],
+                    "taskDefinition": {
+                      "Ref": "ServicetaskDefinitionC6531610"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ecs.CfnService",
+                  "version": "1.114.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.114.0"
+            }
+          },
+          "loadbalancerDnsName": {
+            "id": "loadbalancerDnsName",
+            "path": "SpringBootApplication/loadbalancerDnsName",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.114.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "SpringBootApplication/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "SpringBootApplication/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.114.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.114.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.114.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.114.0"
+    }
+  }
+}
