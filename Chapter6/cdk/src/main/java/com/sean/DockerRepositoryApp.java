@@ -17,7 +17,7 @@ public class DockerRepositoryApp {
         String accountId = (String) app
                 .getNode()
                 .tryGetContext("accountId");
-        Objects.requireNonNull(accountId, "accountId must not be null");
+        Objects.requireNonNull(accountId, "docker - accountId must not be null");
 
         String region = (String) app
                 .getNode()
