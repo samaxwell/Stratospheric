@@ -1,0 +1,13 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "repository:deploy": "cdk deploy --app   \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.DockerRepositoryApp\" --require-approval never",
+    "repository:destroy": "cdk destroy --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.DockerRepositoryApp\" --force --require-approval never",
+    "network:deploy": "cdk deploy --app      \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.NetworkApp\" --require-approval never"
+  },
+  "devDependencies": {
+    "aws-cdk": "1.122.0"
+  }
+}
