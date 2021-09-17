@@ -2,9 +2,9 @@ package com.sean;
 
 import com.sean.models.ApplicationEnvironment;
 import com.sean.models.Service;
-import com.sean.models.service.DockerImageSource;
 import com.sean.models.network.Network;
 import com.sean.models.network.NetworkOutputParameters;
+import com.sean.models.service.DockerImageSource;
 import com.sean.models.service.ServiceInputParameters;
 import software.amazon.awscdk.core.App;
 import software.amazon.awscdk.core.Environment;
@@ -26,6 +26,9 @@ public class ServiceApp {
         String springProfile = StackUtils.getCommandLineArg(app, "springProfile", true);
         String dockerImageUrl = StackUtils.getCommandLineArg(app, "dockerImageUrl", true);
         String region = StackUtils.getCommandLineArg(app, "region", true);
+
+        System.out.printf("Found --> environmentName: %s, applicationName: %s, region: %s, accountId: %s, springProfile: %s, dockerImageUrl: %s",
+                environmentName, applicationName, region, accountId, springProfile, dockerImageUrl);
 
         Environment awsEnvironment = StackUtils.makeEnv(accountId, region);
 

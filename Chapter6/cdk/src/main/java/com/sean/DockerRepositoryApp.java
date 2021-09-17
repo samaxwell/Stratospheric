@@ -7,27 +7,14 @@ import software.amazon.awscdk.core.Environment;
 import software.amazon.awscdk.core.Stack;
 import software.amazon.awscdk.core.StackProps;
 
-import java.util.Objects;
-
 public class DockerRepositoryApp {
 
     public static void main(final String[] args) {
         App app = new App();
 
-        String accountId = (String) app
-                .getNode()
-                .tryGetContext("accountId");
-        Objects.requireNonNull(accountId, "docker - accountId must not be null");
-
-        String region = (String) app
-                .getNode()
-                .tryGetContext("region");
-        Objects.requireNonNull(region, "region must not be null");
-
-        String applicationName = (String) app
-                .getNode()
-                .tryGetContext("applicationName");
-        Objects.requireNonNull(applicationName, "applicationName must not be null");
+        String accountId = StackUtils.getCommandLineArg(app, "accountId", true);
+        String region = StackUtils.getCommandLineArg(app, "region", true);
+        String applicationName = StackUtils.getCommandLineArg(app, "applicationName", true);
 
         System.out.printf("Found --> applicationName: %s, region: %s, accountId: %s", applicationName, region, accountId);
 

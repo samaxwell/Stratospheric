@@ -1,6 +1,7 @@
 package com.sean.models;
-import com.sean.models.service.DockerImageSource;
+
 import com.sean.models.network.NetworkOutputParameters;
+import com.sean.models.service.DockerImageSource;
 import software.amazon.awscdk.core.*;
 import software.amazon.awscdk.services.ec2.CfnSecurityGroup;
 import software.amazon.awscdk.services.ec2.CfnSecurityGroupIngress;
