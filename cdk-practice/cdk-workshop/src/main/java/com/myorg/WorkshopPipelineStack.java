@@ -43,10 +43,14 @@ public class WorkshopPipelineStack extends Stack {
 
             .synthAction(SimpleSynthAction.Builder.create()
                     .installCommands(List.of("npm install -g aws-cdk"))
-                    .synthCommand("npx cdk synth")
+//                    .synthCommand("npx cdk synth")
+                    .synthCommand("cdk synth")
                     .sourceArtifact(sourceArtifact)
                     .cloudAssemblyArtifact(cloudAssemblyArtifact)
-                    .buildCommands(List.of("mvn package"))
+                    .buildCommands(List.of(
+                            "pwd",
+                            "ls -l",
+                            "cd cdk-practice/cdk-workshop && mvn package"))
                     .build())
             .build();
 

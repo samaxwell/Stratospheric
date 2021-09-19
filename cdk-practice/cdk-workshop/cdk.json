@@ -1,5 +1,5 @@
 {
-  "app": "mvnw -e -q compile exec:java",
+  "app": "mvn -e -q compile exec:java",
   "versionReporting": false,
   "context": {
     "@aws-cdk/core:newStyleStackSynthesis": true,
