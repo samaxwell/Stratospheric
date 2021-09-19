@@ -15,7 +15,7 @@ public class WorkshopPipelineStage extends Stage {
     public WorkshopPipelineStage(@NotNull Construct scope, @NotNull String id, @Nullable StageProps props) {
         super(scope, id, props);
 
-        new CdkWorkshopStack(this, "WevService");
+        new CdkWorkshopStack(this, "WebService");
     }
 
 }

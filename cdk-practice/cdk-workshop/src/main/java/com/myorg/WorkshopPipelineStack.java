@@ -5,6 +5,7 @@ import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.core.Stack;
 import software.amazon.awscdk.core.StackProps;
 import software.amazon.awscdk.pipelines.CdkPipeline;
+import software.amazon.awscdk.pipelines.CodePipeline;
 import software.amazon.awscdk.pipelines.SimpleSynthAction;
 import software.amazon.awscdk.services.codecommit.Repository;
 import software.amazon.awscdk.services.codepipeline.Artifact;
@@ -36,6 +37,7 @@ public class WorkshopPipelineStack extends Stack {
                 .pipelineName("WorkshopPipeline")
                 .cloudAssemblyArtifact(cloudAssemblyArtifact)
 
+                /* Create the CodeCommit repo */
                 .sourceAction(CodeCommitSourceAction.Builder.create()
                         .actionName("CodeCommit") // any Git-based source control
                         .output(sourceArtifact)
@@ -44,9 +46,8 @@ public class WorkshopPipelineStack extends Stack {
 
                 .synthAction(SimpleSynthAction.Builder.create()
                         .installCommands(List.of("npm install -g aws-cdk"))
-                        .subdirectory("cdk-practice/cdk-workshop/") // change to dir before running commands
-//                    .synthCommand("npx cdk synth")
-                        .synthCommand("cdk synth")
+//                        .subdirectory("cdk-practice/cdk-workshop/") // change to dir before running commands
+                        .synthCommand("npx cdk synth")
                         .sourceArtifact(sourceArtifact)
                         .cloudAssemblyArtifact(cloudAssemblyArtifact)
                         .buildCommands(List.of(

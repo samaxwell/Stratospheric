@@ -1,23 +1,32 @@
-# Welcome to your CDK Java project!
+# CDK Workshop Code
+This repo follows [this useful workshop](https://cdkworkshop.com/50-java.html) on working with the AWS CDK for Java projects.
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`CdkWorkshopStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+The above tutorial combines several things:
+1. Building an application 
+2. Building the application infrastructure via CDK
+3. Building a CI/CD pipeline for the application
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+All these components are in the same project, which makes it kind of confusing.
 
-It is a [Maven](https://maven.apache.org/) based project, so you can open this project with any Maven compatible Java IDE to build and run tests.
+To get up and running:
+- First create the CodeCommit repo (comment out everything else in 
+`WorkshopPipelineStack.java`) and from the cli run `cdk deploy`. This will create the code repository.
+Commit ony this project (not the whole parent, otherwise execution directories become a problem)
+to the repository. You will need to set the git remote to the HTTPS url of the new repo and use
+HTTPS tokens from IAM to authenticate. 
 
-## Tutorial  
-See [this useful workshop](https://cdkworkshop.com/50-java.html) on working with the AWS CDK for Java projects.
 
+- Uncomment the rest of the code and run `cdk deploy` again. This will create the pipeline and
+link it to the CodeCommit repository, create a code-commit hook as well. It will also trigger a 
+build which "should" pass.
 
-## Useful commands
+From this point on, deploys happen through code commits only, and you should not have to manually
+run `cdk deploy` anymore. 
 
- * `mvn package`     compile and run tests
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
+###Improvements
+- The CodeCommit repository should be its own stack
+- The CodePipeline should be its own stack
+- The application should be (and in this case, is) its own stack
 
-Enjoy!
+This means there would be a minimum of 3 stacks per app. This may impact the 'self-mutation'
+of the pipelines (the trade-off being a slightly decreased deploy time).

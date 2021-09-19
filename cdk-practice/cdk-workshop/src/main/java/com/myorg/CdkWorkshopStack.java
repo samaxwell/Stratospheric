@@ -1,9 +1,6 @@
 package com.myorg;
 
-import software.amazon.awscdk.core.Construct;
-import software.amazon.awscdk.core.Duration;
-import software.amazon.awscdk.core.Stack;
-import software.amazon.awscdk.core.StackProps;
+import software.amazon.awscdk.core.*;
 import software.amazon.awscdk.services.apigateway.LambdaRestApi;
 import software.amazon.awscdk.services.lambda.Code;
 import software.amazon.awscdk.services.lambda.Function;
@@ -13,6 +10,9 @@ import software.amazon.awscdk.services.sns.subscriptions.SqsSubscription;
 import software.amazon.awscdk.services.sqs.Queue;
 
 public class CdkWorkshopStack extends Stack {
+
+    public final CfnOutput hcEndpoint;
+
     public CdkWorkshopStack(final Construct parent, final String id) {
         this(parent, id, null);
     }
@@ -31,10 +31,12 @@ public class CdkWorkshopStack extends Stack {
                 .downstream(hello)
                 .build());
 
-        LambdaRestApi.Builder.create(this, "Endpoint")
+        final LambdaRestApi gateway = LambdaRestApi.Builder.create(this, "Endpoint")
                 .handler(helloWithCounter.getHandler())
                 .build();
 
-
+        hcEndpoint = CfnOutput.Builder.create(this, "GatewayUrl")
+                .value(gateway.getUrl())
+                .build();
     }
 }

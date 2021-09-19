@@ -11,3 +11,8 @@ target
 .cdk.staging
 cdk.out
 
+
+
+*.js
+
+!lambda/*.js
