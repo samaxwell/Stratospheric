@@ -36,6 +36,5 @@ public class CdkWorkshopStack extends Stack {
                 .build();
 
 
-
     }
 }

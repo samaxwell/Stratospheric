@@ -18,40 +18,46 @@ public class WorkshopPipelineStack extends Stack {
 
     public WorkshopPipelineStack(final Construct parent, final String id, final StackProps props) {
         super(parent, id, props);
-    }
 
-    final Repository repo = Repository.Builder.create(this, "WorkshopRepo")
-            .repositoryName("workshoprepo")
-            .build();
 
-    // artifact for sourcecode
-    final Artifact sourceArtifact = new Artifact();
+        final Repository repo = Repository.Builder.create(this, "WorkshopRepo")
+                .repositoryName("workshoprepo")
+                .build();
 
-    // artifact for cloud assembly (cloudformation template + all other assets)
-    final Artifact cloudAssemblyArtifact = new Artifact();
+        // artifact for sourcecode
+        final Artifact sourceArtifact = new Artifact();
 
-    // Basic pipeline declaration. This sets the initial structure
-    final CdkPipeline pipeline = CdkPipeline.Builder.create(this, "Pipeline")
-            .pipelineName("WorkshopPipeline")
-            .cloudAssemblyArtifact(cloudAssemblyArtifact)
+        // artifact for cloud assembly (cloudformation template + all other assets)
+        final Artifact cloudAssemblyArtifact = new Artifact();
 
-            .sourceAction(CodeCommitSourceAction.Builder.create()
-                    .actionName("CodeCommit") // any Git-based source control
-                    .output(sourceArtifact)
-                    .repository(repo)
-                    .build())
 
-            .synthAction(SimpleSynthAction.Builder.create()
-                    .installCommands(List.of("npm install -g aws-cdk"))
+        // Basic pipeline declaration. This sets the initial structure
+        final CdkPipeline pipeline = CdkPipeline.Builder.create(this, "Pipeline")
+                .pipelineName("WorkshopPipeline")
+                .cloudAssemblyArtifact(cloudAssemblyArtifact)
+
+                .sourceAction(CodeCommitSourceAction.Builder.create()
+                        .actionName("CodeCommit") // any Git-based source control
+                        .output(sourceArtifact)
+                        .repository(repo)
+                        .build())
+
+                .synthAction(SimpleSynthAction.Builder.create()
+                        .installCommands(List.of("npm install -g aws-cdk"))
+                        .subdirectory("cdk-practice/cdk-workshop/") // change to dir before running commands
 //                    .synthCommand("npx cdk synth")
-                    .synthCommand("cdk synth")
-                    .sourceArtifact(sourceArtifact)
-                    .cloudAssemblyArtifact(cloudAssemblyArtifact)
-                    .buildCommands(List.of(
-                            "pwd",
-                            "ls -l",
-                            "cd cdk-practice/cdk-workshop && mvn package"))
-                    .build())
-            .build();
+                        .synthCommand("cdk synth")
+                        .sourceArtifact(sourceArtifact)
+                        .cloudAssemblyArtifact(cloudAssemblyArtifact)
+                        .buildCommands(List.of(
+                                "pwd",
+                                "ls -l",
+                                "mvn package"))
+                        .build())
+                .build();
 
+        final WorkshopPipelineStage deploy = new WorkshopPipelineStage(this, "Deploy");
+        pipeline.addApplicationStage(deploy);
+
+    }
 }
