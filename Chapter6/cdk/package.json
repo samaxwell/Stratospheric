@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "cc:deploy":          "cdk deploy  --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.CodeCommitApp\"       --require-approval never",
+    "cc:destroy":         "cdk destroy --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.CodeCommitApp\"",
     "network:deploy":     "cdk deploy  --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.NetworkApp\"          --require-approval never",
     "network:destroy":    "cdk destroy --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.NetworkApp\"          --force --require-approval never",
     "repository:deploy":  "cdk deploy  --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.DockerRepositoryApp\" --require-approval never",
     "repository:destroy": "cdk destroy --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.DockerRepositoryApp\" --force --require-approval never",
     "service:deploy":     "cdk deploy  --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.ServiceApp\"          -c springProfile=aws -c dockerImageUrl=docker.io/seanimus/todo-app-v1:latest --require-approval never",
     "service:destroy":    "cdk destroy --app \"mvnw -e -q compile exec:java -Dexec.mainClass=com.sean.ServiceApp\"          -c springProfile=aws -c dockerImageUrl=docker.io/seanimus/todo-app-v1:latest --force --require-approval never"
-
   },
   "devDependencies": {
     "aws-cdk": "1.122.0"

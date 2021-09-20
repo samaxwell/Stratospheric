@@ -111,6 +111,14 @@
             <version>${cdk.version}</version>
         </dependency>
         <dependency>
+            <groupId>software.amazon.awscdk</groupId>
+            <artifactId>codecommit</artifactId>
+            <version>${cdk.version}</version>
+        </dependency>
+
+
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>

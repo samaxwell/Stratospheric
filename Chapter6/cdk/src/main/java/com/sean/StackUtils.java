@@ -24,4 +24,9 @@ public class StackUtils {
                 .region(region)
                 .build();
     }
+
+    /* Characters only */
+    public static String getStackName(String applicationName, String stackDescription) {
+        return applicationName + stackDescription;
+    }
 }
